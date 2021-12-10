@@ -1,18 +1,23 @@
-def move_submarine(horizontal_position, depth, direction, aim=0):
+def move_submarine(horizontal_position, depth, direction, aim=None):
     direction_of_movement = direction.split()[0]
     length = int(direction.split()[1])
 
     if direction_of_movement == "forward":
         horizontal_position += length
-        depth += aim * length
+        if aim is not None:
+            depth += aim * length
 
     if direction_of_movement == "down":
-        #  depth += length  # only needed for part 1
-        aim += length  # only needed for part 2
+        if aim is None:
+            depth += length  # only needed for part 1
+        else:
+            aim += length  # only needed for part 2
 
     if direction_of_movement == "up":
-        # depth -= length   # only needed for part 1
-        aim -= length  # only needed for part 2
+        if aim is None:
+            depth -= length   # only needed for part 1
+        else:
+            aim -= length  # only needed for part 2
 
     return horizontal_position, depth, aim
 
