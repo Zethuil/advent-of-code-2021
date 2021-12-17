@@ -15,7 +15,7 @@ def move_submarine(horizontal_position, depth, direction, aim=None):
 
     if direction_of_movement == "up":
         if aim is None:
-            depth -= length   # only needed for part 1
+            depth -= length  # only needed for part 1
         else:
             aim -= length  # only needed for part 2
 
