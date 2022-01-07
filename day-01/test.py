@@ -6,7 +6,7 @@ from solution import convert_to_int_list, count_increases, sliding_window
 class Day01Test(unittest.TestCase):
     def test_sample_increases(self):
         """
-        Test if the sample input yields the right results.
+        Test that we count the depth increases correctly for the sample data.
         """
         with open("sample.txt", "r") as f:
             # arrange
@@ -20,7 +20,7 @@ class Day01Test(unittest.TestCase):
 
     def test_main_increases(self):
         """
-        Test if the main input yields the right results.
+        Test that we count the depth increases correctly for the sample data.
         """
         with open("input.txt", "r") as f:
             # arrange
@@ -33,6 +33,9 @@ class Day01Test(unittest.TestCase):
             self.assertEqual(count, 1393)
 
     def test_sliding_window_sample(self):
+        """
+        Test that we calculate the correct sliding window sum for the sample data.
+        """
         with open("sample.txt", "r") as f:
             # arrange
             test_data = convert_to_int_list(f.readlines())
@@ -46,6 +49,9 @@ class Day01Test(unittest.TestCase):
             )
 
     def test_sliding_window_sample_increases(self):
+        """
+        Test that we calculate the right number of increases for sliding window sums of the sample data.
+        """
         with open("sample.txt", "r") as f:
             # arrange
             test_data = convert_to_int_list(f.readlines())
@@ -58,6 +64,9 @@ class Day01Test(unittest.TestCase):
             self.assertEqual(sliding_window_increases, 5)
 
     def test_sliding_window_input_increases(self):
+        """
+        Test that we calculate the right number of increases for sliding window sums of the main data.
+        """
         with open("input.txt", "r") as f:
             # arrange
             test_data = convert_to_int_list(f.readlines())
