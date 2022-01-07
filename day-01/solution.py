@@ -8,7 +8,9 @@ def count_increases(num_input):
     last_value = None
     counter = 0
     for num in num_input:
-        counter += 0 if last_value is None else (0 if num <= last_value else 1)
+        if last_value is not None and num > last_value:
+            counter += 1
+
         last_value = num
 
     return counter
@@ -19,7 +21,7 @@ def sliding_window(num_input):
     size = 3
     window_sums = []
     for i in range(len(num_input) - size + 1):
-        window_sums.append(num_input[i] + num_input[i + 1] + num_input[i + 2])
+        window_sums.append(sum(num_input[i:i+size]))
 
     return window_sums
 
